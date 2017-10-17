@@ -1,0 +1,57 @@
+page-home {
+
+  ion-card{
+    color:black;
+    width:95% !important;
+
+  }
+  .right-corner{
+  float:right;
+  padding:5px;
+  color:black;
+}
+
+.ad{
+  bottom:0px;
+  position:fixed;
+  margin:0px;
+  left:0px;
+}
+
+.left-corner{
+  float:left;
+  padding:5px;
+  color:black;
+}
+  ion-card-header{
+    text-align: center;
+    padding-bottom:0px !important;
+  }
+
+  ion-col{
+    border:black solid 1px;
+  }
+
+  ion-grid{
+    text-align: center;
+  }
+
+  .Section{
+    width:90%;
+    margin-left:5%;
+    margin-bottom:10px;
+  }
+
+  .fatButton{
+    height:200px;
+  }
+
+  ion-segment{
+  border:white solid 1px;
+  margin-bottom:10px;
+}
+ion-segment-button{
+  border:white solid 1px;
+}
+
+}

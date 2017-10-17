@@ -1,0 +1,14 @@
+page-points-earned-modal {
+  ion-card{
+    text-align: center;
+    margin-top:25%;
+    border:2px solid black;
+  }
+
+  ion-card-header{
+    white-space: normal;
+  }
+  ion-content{
+    background-color: rgba(0,0,0,0) !important;
+  }
+}

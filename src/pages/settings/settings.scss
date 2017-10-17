@@ -1,0 +1,19 @@
+page-settings {
+  ion-segment{
+  border:black solid 1px;
+  margin-bottom:10px;
+}
+ion-segment-button{
+  border:white solid 1px;
+}
+
+ion-row{
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buttonSegment{
+  flex:1;
+}
+}

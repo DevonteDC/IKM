@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="light">
+
+
+      <ion-buttons left>
+        <button  ion-button icon-only (click)="settings()">
+          <ion-icon name="settings"></ion-icon>
+        </button>
+
+      </ion-buttons>
+
+      <ion-title style="text-align:center;">
+      IKM Home
+    </ion-title>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="blackBackground">
+  <ion-segment [(ngModel)]="purpose" color="light">
+    <ion-segment-button value="All" (ionSelect)="selectedAll()">
+      All
+    </ion-segment-button>
+    <ion-segment-button value="Employment" (ionSelect)="selectedEmployment()">
+      Employment
+    </ion-segment-button>
+    <ion-segment-button value="Rewards" (ionSelect)="selectedRewards()">
+      Rewards
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list *ngFor = "let v of visibleIKMs;let i = index">
+    <ion-card (click)="openIKM(i)">
+      <div *ngIf="v.purpose == 'Employment'" class="left-corner">
+          <ion-icon name="construct"></ion-icon>
+      </div>
+      <div *ngIf="v.purpose == 'Rewards'" class="left-corner">
+          <ion-icon name="trophy"></ion-icon>
+      </div>
+      <div class="right-corner">
+        <button ion-button icon-only color="danger" (click)="deleteAlert(i)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </div>
+      <ion-card-header>
+        {{v.name}}
+      </ion-card-header>
+      <ion-card-content>
+
+    </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <button class="ad"  ion-button full color="secondary">
+    Advertisement
+  </button>
+</ion-content>

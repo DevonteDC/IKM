@@ -1,0 +1,101 @@
+<!--
+Generated template for the Quiz page.
+
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goHome()">
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
+    <ion-title style="text-align:center;">
+      Settings
+    </ion-title>
+
+
+
+
+
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class='blackBackground' padding>
+  <ion-card >
+
+    <ion-card-header style="white-space:normal !important;">
+      Choose your preferences
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-segment [(ngModel)]="preference" color="dark">
+      <ion-segment-button value="Public" (ionSelect)="selectedPublic()">
+        Public IKMs
+      </ion-segment-button>
+      <ion-segment-button value="Private" (ionSelect)="selectedPrivate()">
+        Private IKMs
+      </ion-segment-button>
+    </ion-segment>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="preference == 'Public'">
+
+    <ion-card-header style="white-space:normal !important;">
+      Choose your interests
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+
+          <button (click)="toggleBartender()" *ngIf="preferredCategories.Bartender == 'Off'" class="buttonSegment" ion-button icon-only color="dark">
+
+            <ion-icon name="color-fill"></ion-icon>
+          </button>
+          <button (click)="toggleBartender()" *ngIf="preferredCategories.Bartender == 'On'" class="buttonSegment" ion-button icon-only color="secondary">
+
+            <ion-icon name="color-fill"></ion-icon>
+          </button>
+
+
+          <button (click)="toggleServer()" *ngIf="preferredCategories.Server == 'Off'" class="buttonSegment" ion-button icon-only color="dark">
+            <ion-icon name="restaurant"></ion-icon>
+          </button>
+          <button (click)="toggleServer()" *ngIf="preferredCategories.Server == 'On'" class="buttonSegment" ion-button icon-only color="secondary">
+            <ion-icon name="restaurant"></ion-icon>
+          </button>
+        </ion-row>
+
+        <ion-row>
+
+          <button (click)="toggleWine()" *ngIf="preferredCategories.Wine == 'Off'" class="buttonSegment" ion-button icon-only color="dark">
+            <ion-icon name="wine"></ion-icon>
+          </button>
+          <button (click)="toggleWine()" *ngIf="preferredCategories.Wine == 'On'" class="buttonSegment" ion-button icon-only color="secondary">
+            <ion-icon name="wine"></ion-icon>
+          </button>
+
+          <button (click)="toggleBeer()" *ngIf="preferredCategories.Beer == 'Off'" class="buttonSegment" ion-button icon-only color="dark">
+            <ion-icon name="beer"></ion-icon>
+          </button>
+          <button (click)="toggleBeer()" *ngIf="preferredCategories.Beer == 'On'" class="buttonSegment" ion-button icon-only color="secondary">
+            <ion-icon name="beer"></ion-icon>
+          </button>
+        </ion-row>
+
+
+    </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

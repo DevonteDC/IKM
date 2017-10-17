@@ -1,0 +1,60 @@
+<!--
+Generated template for the Quiz page.
+
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar>
+    <ion-title>Quiz Time Left: {{tick}} </ion-title>
+    <ion-buttons end>
+      <button icon-only ion-button (click)="exitQuiz()">
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class='blackBackground' padding>
+      <ion-card *ngIf="showQuestions" [@size]="timeToFlip">
+        <ion-card-header style="float:right">
+          {{currentQuestion.questionLabel}}
+        </ion-card-header>
+        <ion-card-header>
+          Question {{qIndex}}
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list radio-group [(ngModel)]="chosenAnswer" (ionChange)="nextQuestion()">
+
+            <ion-list-header>
+              {{currentQuestion.question}}
+            </ion-list-header>
+
+            <ion-item>
+              <ion-label>A: {{currentAnswers.first}}</ion-label>
+              <ion-radio  value="first"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>B: {{currentAnswers.second}}</ion-label>
+              <ion-radio value="second"></ion-radio>
+            </ion-item>
+
+            <ion-item *ngIf="currentQuestion.questionType == 'mc3' || currentQuestion.questionType == 'mc4'">
+              <ion-label>C: {{currentAnswers.third}}</ion-label>
+              <ion-radio value="third"></ion-radio>
+            </ion-item>
+
+            <ion-item *ngIf="currentQuestion.questionType == 'mc4'">
+              <ion-label>D: {{currentAnswers.fourth}}</ion-label>
+              <ion-radio value="fourth"></ion-radio>
+            </ion-item>
+
+
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

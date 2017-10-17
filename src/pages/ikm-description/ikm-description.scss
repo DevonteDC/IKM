@@ -1,0 +1,20 @@
+page-ikm-description {
+  .section{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  ion-card{
+    text-align: center;
+  }
+
+  ion-card-header{
+    white-space: normal;
+  }
+
+  ion-label{
+    text-align: center;
+    white-space: normal;
+  }
+}

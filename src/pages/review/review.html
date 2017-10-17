@@ -1,0 +1,56 @@
+<!--
+  Generated template for the Results page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Results</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="blackBackground" padding>
+  <ion-item>
+  <ion-label>Category</ion-label>
+  <ion-select [(ngModel)]="selectedCategory" (ionChange)="categorySelected()">
+    <ion-option *ngFor="let category of categories" value="{{category}}">{{category}}</ion-option>
+  </ion-select>
+</ion-item>
+
+<ion-item>
+<ion-label>Topic</ion-label>
+<ion-select [(ngModel)]="selectedTopic" (ionChange)="topicSelected()" >
+  <ion-option *ngFor="let topic of topics" value="{{topic}}">{{topic}}</ion-option>
+</ion-select>
+</ion-item>
+
+
+  <ion-list *ngFor="let answer of answerPackage">
+  <ion-card>
+    <ion-card-header style="float:right;font-family:fantasy;">
+      {{answer.correct}}<br><p>Time: {{answer.time}} secs</p>
+    </ion-card-header>
+  <ion-card-header style="white-space:normal !important;">
+    {{answer.question}}
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item [ngStyle]="{'background-color':answer.firstColor? answer.firstColor : 'white'}">
+      <ion-label>A: {{answer.first}}</ion-label>
+    </ion-item>
+    <ion-item [ngStyle]="{'background-color':answer.secondColor? answer.secondColor : 'white'}">
+      <ion-label>B: {{answer.second}}</ion-label>
+    </ion-item>
+    <ion-item [ngStyle]="{'background-color':answer.thirdColor? answer.thirdColor : 'white'}">
+      <ion-label>C: {{answer.third}}</ion-label>
+    </ion-item>
+    <ion-item [ngStyle]="{'background-color':answer.fourthColor? answer.fourthColor : 'white'}">
+      <ion-label>D: {{answer.fourth}}</ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+</ion-list>
+</ion-content>
